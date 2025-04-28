@@ -35,10 +35,16 @@ variable "vpc_cidr_block" {
 }
 
 variable "public_ports" {
+  description = "EC2 public ports"
   type = map(number)
   default = {
     SSH  = 22
   }
+}
+
+variable "eip_id" {
+  description = "EC2 nat EIP"
+  type = string
 }
 
 variable "tags" {

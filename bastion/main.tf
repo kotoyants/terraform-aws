@@ -44,6 +44,11 @@ EOF
   }
 }
 
+resource "aws_eip_association" "this" {
+  instance_id   = aws_instance.this.id
+  allocation_id = var.eip_id
+}
+
 resource "aws_security_group" "this" {
   name   = var.name
   vpc_id = var.vpc_id
